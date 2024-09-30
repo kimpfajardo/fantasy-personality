@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import TailwindSpring from "tailwindcss-spring";
 
 const config: Config = {
   content: [
@@ -12,8 +13,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.19, 1, 0.22, 1)",
+      },
     },
   },
-  plugins: [],
+  plugins: [TailwindSpring],
 };
 export default config;
