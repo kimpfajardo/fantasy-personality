@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     title: "Fantasy Character Quiz",
     description:
       "Discover which legendary fantasy character mirrors your personality in this fun and exciting personality quiz!",
-    url: "https://your-quiz-app.com",
+    url: "https://fantasy-personality-git-main-kimpfajardos-projects.vercel.app/",
     images: [
       {
-        url: "/path-to-your-image.jpg",
+        url: "/background.jpg",
         width: 1200,
         height: 630,
         alt: "Fantasy Character Quiz Image",
