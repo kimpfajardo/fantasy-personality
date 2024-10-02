@@ -52,13 +52,15 @@ export const Result = ({
       </motion.h2>
 
       <motion.div variants={variants}>
-        <Image
-          className="rounded-2xl border-2 shadow-2xl hover:scale-110 transition-all hover:rotate-2"
-          src={image}
-          alt={name}
-          width={300}
-          height={300}
-        />
+        <div className="overflow-hidden rounded-2xl border-2 shadow-2xl hover:scale-110 transition-all hover:rotate-2 spring-bounce-40 spring-duration-300 lg:hover:scale-[1.15]">
+          <Image
+            className="character-image "
+            src={image}
+            alt={name}
+            width={300}
+            height={300}
+          />
+        </div>
       </motion.div>
 
       <motion.div className="w-full" variants={variants}>
@@ -81,44 +83,44 @@ export const Result = ({
         </ul>
       </motion.div>
 
-      <motion.div
-        className=" p-4  flex flex-col gap-6 bg-slate-700 text-white lg:hover:scale-110 hover:shadow-2xl transition-all"
-        variants={variants}
-      >
-        <div className=" w-full">
-          <h4 className="text-2xl">KEEP IN MIND</h4>
-          <hr className="mt-6 w-10 mx-auto border-white border-2" />
-        </div>
+      <motion.div variants={variants}>
+        <div className="p-4 flex flex-col gap-6 bg-slate-700 text-white transform spring-bounce-40 spring-duration-300 transition-transform lg:hover:scale-110">
+          <div className=" w-full">
+            <h4 className="text-2xl">KEEP IN MIND</h4>
+            <hr className="mt-6 w-10 mx-auto border-white border-2" />
+          </div>
 
-        <p>{notes}</p>
+          <p>{notes}</p>
+        </div>
       </motion.div>
 
-      <motion.button
-        className={cn(
-          "p-4 text-center transition-all duration-300 select-none overflow-hidden bg-slate-200",
-          "relative group tracking-normal answer w-full"
-        )}
-        type="button"
-        style={{
-          animationIterationCount: "1",
-          animationDirection: "normal",
-          animationFillMode: "forwards",
-        }}
-        onClick={handleReset}
-        variants={variants}
-      >
-        <div
+      <motion.div className="w-full" variants={variants}>
+        <motion.button
           className={cn(
-            "absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 ease-smooth delay-100 group-hover:w-full"
+            "p-4 text-center transition-all duration-300 select-none overflow-hidden bg-slate-200",
+            "relative group tracking-normal w-full"
           )}
-        />
-        <span>Take the quiz again</span>
-        <div
-          className={cn(
-            "absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 ease-smooth delay-100 group-hover:w-full"
-          )}
-        />
-      </motion.button>
+          type="button"
+          style={{
+            animationIterationCount: "1",
+            animationDirection: "normal",
+            animationFillMode: "forwards",
+          }}
+          onClick={handleReset}
+        >
+          <div
+            className={cn(
+              "absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 ease-smooth delay-100 group-hover:w-full"
+            )}
+          />
+          <span>Take the quiz again</span>
+          <div
+            className={cn(
+              "absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 ease-smooth delay-100 group-hover:w-full"
+            )}
+          />
+        </motion.button>
+      </motion.div>
     </motion.div>
   );
 };

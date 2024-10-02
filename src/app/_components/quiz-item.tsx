@@ -2,41 +2,58 @@
 
 import { cn } from "@/utils/functions";
 import { memo, useCallback, useMemo, useState } from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { TAnswer, TQuestion } from "@/utils/types";
+import { ChoiceItem } from "./choice-item";
 
 type QuizItemProps = {
   question: TQuestion;
   onNext: (answer: TAnswer) => void;
 };
 
-const container = {
+export const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
     transition: {
       staggerChildren: 0.1,
-      type: "tween",
+      type: "spring",
     },
   },
   next: {
     opacity: 0,
     y: -100,
-    transition: {
-      type: "spring",
-      delay: 0.2,
-    },
   },
 };
 
-const item = {
+export const childVariants = {
+  hidden: { opacity: 0, y: 100 },
+  show: {
+    opacity: 1,
+    y: 0,
+  },
+};
+
+export const choiceContainerVariants = {
   hidden: { opacity: 0, y: 100 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      staggerChildren: 2,
+      staggerChildren: 0.05,
+      type: "tween",
     },
+  },
+};
+
+export const choiceVariants = {
+  hidden: {
+    opacity: 0,
+    y: -10,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
   },
 };
 
@@ -77,113 +94,47 @@ export const QuizItem = memo<QuizItemProps>(
         initial="hidden"
         animate={"show"}
         exit={"next"}
+        className="flex flex-col gap-6 px-5"
       >
-        <div className="flex flex-col gap-6 px-5">
-          <motion.div variants={item}>
-            <h1 className="text-2xl md:text-6xl text-center">{question}</h1>
-          </motion.div>
+        <motion.div variants={childVariants}>
+          <h1 className="text-2xl md:text-6xl text-center">{question}</h1>
+        </motion.div>
 
+        <motion.div variants={childVariants}>
           <motion.div
-            variants={item}
+            variants={choiceContainerVariants}
             className={cn(
-              "grid-cols-1 md:grid-cols-2 grid-rows-2 gap-6",
+              "gap-6",
               type === "multiple-choice"
-                ? "grid"
+                ? "grid grid-cols-1 md:grid-cols-2 grid-rows-2"
                 : cn(
-                    "flex gap-6",
+                    "flex",
                     type === "yes-no-maybe"
                       ? "flex-col"
                       : "flex-col sm:flex-row"
                   )
             )}
-            transition={{
-              staggerChildren: 0.1,
-              delayChildren: 0.5,
-            }}
+            initial="hidden"
+            animate="show"
           >
             {shuffledAnswers.map((answer, index) => (
-              <ChoiceItem
-                chosenAnswer={chosenAnswer}
-                answer={answer}
-                index={index}
-                onClick={() => {
-                  setChosenAnswer(index);
-                  onNext(answer);
-                }}
-                key={answer.text}
-              />
+              <div key={answer.text} className="active:scale-105 transition-all w-full h-full">
+                <ChoiceItem
+                  chosenAnswer={chosenAnswer}
+                  answer={answer}
+                  index={index}
+                  onClick={() => {
+                    setChosenAnswer(index);
+                    onNext(answer);
+                  }}
+                />
+              </div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </motion.div>
     );
   }
 );
 
 QuizItem.displayName = "QuizItem";
-
-export const ChoiceItem = ({
-  chosenAnswer,
-  answer,
-  index,
-  onClick,
-}: {
-  chosenAnswer: number | null;
-  answer: TAnswer;
-  index: number;
-  onClick: () => void;
-}) => {
-  return (
-    <motion.button
-      suppressHydrationWarning
-      key={answer.text}
-      className={cn(
-        "border p-4 text-center transition-all duration-300 select-none overflow-hidden",
-        "relative group tracking-normal answer w-full"
-      )}
-      onClick={onClick}
-      disabled={!!chosenAnswer}
-      type="button"
-      style={{
-        animationIterationCount: "1",
-        animationDirection: "normal",
-        animationFillMode: "forwards",
-      }}
-    >
-      <div
-        className={cn(
-          "absolute top-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-black transition-all duration-300 ease-smooth delay-100",
-          chosenAnswer === index
-            ? "w-full"
-            : chosenAnswer
-            ? ""
-            : "group-hover:w-3/4"
-        )}
-      />
-      <div
-        className={cn(
-          "absolute top-1/2 left-0 -translate-y-1/2 w-1 h-1 bg-black transition-all duration-300 ease-smooth delay-100 ",
-          chosenAnswer === index ? "h-full visible" : "invisible"
-        )}
-      />
-      <div className="">{answer?.content}</div>
-      <span>{answer.text}</span>
-      <div
-        className={cn(
-          "absolute top-1/2 right-0 -translate-y-1/2 w-1 h-1 bg-black transition-all duration-300 ease-smooth delay-100 ",
-          chosenAnswer === index ? "h-full visible" : "invisible"
-        )}
-      />
-      <div
-        className={cn(
-          "absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-black transition-all duration-300 ease-smooth delay-100",
-          chosenAnswer === index
-            ? "w-full"
-            : chosenAnswer
-            ? ""
-            : "group-hover:w-3/4"
-        )}
-      />
-    </motion.button>
-  );
-};

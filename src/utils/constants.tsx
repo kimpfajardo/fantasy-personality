@@ -12,7 +12,7 @@ export const QUESTION_LIST: Readonly<TQuestion[]> = Object.freeze([
     answers: [
       {
         content: (
-          <div className="w-full justify-center items-center flex transition-all">
+          <div className="w-full justify-center items-center flex transition-all text-inherit ">
             <MaleIcon className="w-10 h-10" />
           </div>
         ),
@@ -23,7 +23,7 @@ export const QUESTION_LIST: Readonly<TQuestion[]> = Object.freeze([
       },
       {
         content: (
-          <div className="w-full justify-center items-center flex transition-all">
+          <div className="w-full justify-center items-center flex transition-all text-inherit">
             <FemaleIcon className="w-10 h-10" />
           </div>
         ),
@@ -563,3 +563,13 @@ export const CHARACTER_DESCRIPTIONS: Readonly<
       "Your leadership is powerful, but remember that true strength comes from collaboration, not just command. Be careful not to take on too much responsibility or become overbearing. Let others share the burden, and trust that your team can handle their part. Delegating will make your leadership even stronger.",
   },
 });
+
+export const INITIAL_VALUES = Object.freeze({
+  [CHARACTER_NAMES.BRAVE_KNIGHT]: 0,
+  [CHARACTER_NAMES.WISE_WIZARD]: 0,
+  [CHARACTER_NAMES.MYSTERIOUS_ROGUE]: 0,
+  [CHARACTER_NAMES.COMPASSIONATE_HEALER]: 0,
+  [CHARACTER_NAMES.DARK_SORCERER]: 0,
+  [CHARACTER_NAMES.ADVENTUROUS_EXPLORER]: 0,
+  [CHARACTER_NAMES.NOBLE_ELF]: 0,
+})

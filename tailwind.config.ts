@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import TailwindSpring from "tailwindcss-spring";
 
 const config: Config = {
   content: [
@@ -17,6 +18,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [TailwindSpring],
 };
 export default config;
