@@ -27,7 +27,7 @@ export const useQuiz = () => {
     [scores]
   );
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(-1);
 
   const moveToNextQuestion = useCallback(
     (selectedAnswer: TAnswer) => {
@@ -92,5 +92,6 @@ export const useQuiz = () => {
     moveToNextQuestion,
     topCharacter,
     resetQuiz,
+    setCurrentIndex,
   };
 };
