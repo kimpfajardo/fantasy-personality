@@ -1,46 +1,46 @@
-import AdventurousExplorer from "@/public/characters/adventurous-explorer.webp";
-import AdventurousExplorerFemale from "@/public/characters/adventurous-explorer-female.webp";
+const AdventurousExplorer = "/characters/adventurous-explorer.webp";
+const AdventurousExplorerFemale = "/characters/adventurous-explorer-female.webp";
 
-import BraveKnight from "@/public/characters/brave-knight.webp";
-import BraveKnight2 from "@/public/characters/brave-knight-2.webp";
-import BraveKnightFemale from "@/public/characters/brave-knight-female.webp";
-import BraveKnightFemale2 from "@/public/characters/brave-knight-female-2.webp";
+const BraveKnight = "/characters/brave-knight.webp";
+const BraveKnight2 = "/characters/brave-knight-2.webp";
+const BraveKnightFemale = "/characters/brave-knight-female.webp";
+const BraveKnightFemale2 = "/characters/brave-knight-female-2.webp";
 
-import CompassionateHealer from "@/public/characters/compassionate-healer.webp";
-import CompassionateHealer2 from "@/public/characters/compassionate-healer-2.webp";
-import CompassionateHealerFemale from "@/public/characters/compassionate-healer-female.webp";
+const CompassionateHealer = "/characters/compassionate-healer.webp";
+const CompassionateHealer2 = "/characters/compassionate-healer-2.webp";
+const CompassionateHealerFemale = "/characters/compassionate-healer-female.webp";
 
-import CunningTrickster from "@/public/characters/cunning-trickster.webp";
-import CunningTrickster2 from "@/public/characters/cunning-trickster-2.webp";
-import CunningTricksterFemale from "@/public/characters/cunning-trickster-female.webp";
+const CunningTrickster = "/characters/cunning-trickster.webp";
+const CunningTrickster2 = "/characters/cunning-trickster-2.webp";
+const CunningTricksterFemale = "/characters/cunning-trickster-female.webp";
 
-import DarkSorcerer from "@/public/characters/dark-sorcerer.webp";
-import DarkSorcerer2 from "@/public/characters/dark-sorcerer-2.webp";
-import DarkSorcererFemale from "@/public/characters/dark-sorcerer-female.webp";
-import DarkSorcererFemale2 from "@/public/characters/dark-sorcerer-female-2.webp";
+const DarkSorcerer = "/characters/dark-sorcerer.webp";
+const DarkSorcerer2 = "/characters/dark-sorcerer-2.webp";
+const DarkSorcererFemale = "/characters/dark-sorcerer-female.webp";
+const DarkSorcererFemale2 = "/characters/dark-sorcerer-female-2.webp";
 
-import DragonRider from "@/public/characters/dragon-rider.webp";
-import DragonRider2 from "@/public/characters/dragon-rider-2.webp";
-import DragonRiderFemale from "@/public/characters/dragon-rider-female.webp";
+const DragonRider = "/characters/dragon-rider.webp";
+const DragonRider2 = "/characters/dragon-rider-2.webp";
+const DragonRiderFemale = "/characters/dragon-rider-female.webp";
 
-import DruidOfNature from "@/public/characters/druid-of-nature.webp";
-import DruidOfNature2 from "@/public/characters/druid-of-nature-2.webp";
-import DruidOfNatureFemale from "@/public/characters/druid-of-nature-female.webp";
+const DruidOfNature = "/characters/druid-of-nature.webp";
+const DruidOfNature2 = "/characters/druid-of-nature-2.webp";
+const DruidOfNatureFemale = "/characters/druid-of-nature-female.webp";
 
-import FierceWarrior from "@/public/characters/fierce-warrior.webp";
-import FierceWarrior2 from "@/public/characters/fierce-warrior-2.webp";
-import FierceWarriorFemale from "@/public/characters/fierce-warrior-female.webp";
+const FierceWarrior = "/characters/fierce-warrior.webp";
+const FierceWarrior2 = "/characters/fierce-warrior-2.webp";
+const FierceWarriorFemale = "/characters/fierce-warrior-female.webp";
 
-import MysteriousRogue from "@/public/characters/mysterious-rogue.webp";
-import MysteriousRogueFemale from "@/public/characters/mysterious-rogue-female.webp";
+const MysteriousRogue = "/characters/mysterious-rogue.webp";
+const MysteriousRogueFemale = "/characters/mysterious-rogue-female.webp";
 
-import NobleElf from "@/public/characters/noble-elf.webp";
-import NobleElf2 from "@/public/characters/noble-elf-2.webp";
-import NobleElfFemale from "@/public/characters/noble-elf-female.webp";
-import NobleElfFemale2 from "@/public/characters/noble-elf-female-2.webp";
+const NobleElf = "/characters/noble-elf.webp";
+const NobleElf2 = "/characters/noble-elf-2.webp";
+const NobleElfFemale = "/characters/noble-elf-female.webp";
+const NobleElfFemale2 = "/characters/noble-elf-female-2.webp";
 
-import WiseWizard from "@/public/characters/wise-wizard.webp";
-import WiseWizardFemale from "@/public/characters/wise-wizard-female.webp";
+const WiseWizard = "/characters/wise-wizard.webp";
+const WiseWizardFemale = "/characters/wise-wizard-female.webp";
 
 export {
   AdventurousExplorer,
