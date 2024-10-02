@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/utils/functions";
-import { Inter, Marcellus } from "next/font/google";
+import { Marcellus } from "next/font/google";
 import Image from "next/image";
 import { Footer } from "./_components/footer";
 
@@ -36,13 +36,8 @@ export const metadata: Metadata = {
   },
 };
 
-export const marcellus = Marcellus({
+const marcellus = Marcellus({
   weight: ["400"],
-  subsets: ["latin"],
-});
-
-export const inter = Inter({
-  weight: ["400", "500", "600"],
   subsets: ["latin"],
 });
 

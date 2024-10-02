@@ -1,5 +1,10 @@
 import { cn } from "@/utils/functions";
-import { inter } from "../layout";
+import { Inter } from "next/font/google";
+
+export const inter = Inter({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+});
 
 export const Footer = () => (
   <footer
